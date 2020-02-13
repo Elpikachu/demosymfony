@@ -1,0 +1,13 @@
+1. Create a branch
+2. Access the "/admin" (Should show a 404)
+3. Edit the following files:
+  - vim +18 app/AppKernel.php (uncomment line)
+  - vim +72 app/config/config.yml (uncomment block)
+  - vim +5 app/config/routing.yml (uncomment block)
+4. Intervert the composer.lock files
+5. Commit & push
+6. Access the "/admin" (Should be a 500)
+7. Use SSH connection to show the logs (var/log/prod.log)
+8. Open a tunnel to the database to look for the missing table
+9. Launch the DB schema creation (bin/console doctrine:schema:create)
+10. Reload the "/admin"
